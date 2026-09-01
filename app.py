@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 st.set_page_config(
-    page_title="A Little Question For You 💗",
+    page_title="A Little Message For You 💗",
     page_icon="💗",
     layout="centered",
     initial_sidebar_state="collapsed",
@@ -24,13 +24,9 @@ html = r"""
              user-scalable=no"
 >
 
-<title>A Little Question For You 💗</title>
+<title>A Little Message For You 💗</title>
 
 <style>
-
-/* =========================
-   GENERAL
-========================= */
 
 * {
     box-sizing: border-box;
@@ -46,7 +42,6 @@ body {
 }
 
 body {
-
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -80,80 +75,60 @@ body {
 }
 
 
-/* =========================
-   BACKGROUND GLOW
-========================= */
+/* BACKGROUND */
 
 .glow {
-
     position: fixed;
-
     width: 300px;
     height: 300px;
-
     border-radius: 50%;
-
     filter: blur(70px);
-
     opacity: 0.45;
-
     pointer-events: none;
 }
 
 .glow-one {
-
     background: #ff8fbd;
-
     top: -100px;
     left: -100px;
 }
 
 .glow-two {
-
     background: #9e8cff;
-
     bottom: -100px;
     right: -100px;
 }
 
 
-/* =========================
-   MAIN
-========================= */
+/* MAIN */
 
 .page {
-
     min-height: 100vh;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     padding: 20px;
 }
 
 
-/* =========================
-   CARD
-========================= */
+/* CARD */
 
 .card {
+    width: min(92vw, 600px);
 
-    width: min(92vw, 570px);
-
-    padding: 45px 30px 40px;
+    padding: 40px 28px;
 
     text-align: center;
 
     border-radius: 32px;
 
     background:
-        rgba(255,255,255,0.72);
+        rgba(255,255,255,0.74);
 
     border:
-        1px solid rgba(255,255,255,0.7);
+        1px solid rgba(255,255,255,0.75);
 
     backdrop-filter:
         blur(20px);
@@ -171,13 +146,10 @@ body {
 }
 
 
-/* =========================
-   HEART
-========================= */
+/* HEART */
 
 .top-heart {
-
-    font-size: 64px;
+    font-size: 60px;
 
     display: inline-block;
 
@@ -200,70 +172,84 @@ body {
 }
 
 
-/* =========================
-   TEXT
-========================= */
+/* TITLE */
 
 h1 {
-
     margin:
-        15px 0 10px;
+        12px 0 10px;
 
     font-size:
-        clamp(32px, 8vw, 48px);
+        clamp(32px, 8vw, 46px);
 
     line-height: 1.1;
 
     color: #742c5b;
 }
 
+
+/* INTRO */
+
 .subtitle {
 
-    max-width: 450px;
+    max-width: 470px;
 
     margin:
-        0 auto 25px;
+        0 auto 20px;
 
     font-size: 17px;
 
-    line-height: 1.7;
+    line-height: 1.6;
 
     color: #704d66;
 }
 
-.question {
+
+/* MESSAGE */
+
+.message {
 
     margin:
-        25px 0 30px;
+        20px auto 25px;
+
+    max-width: 510px;
 
     font-size:
-        clamp(23px, 6vw, 32px);
+        clamp(19px, 5vw, 27px);
 
     font-weight: 800;
 
-    line-height: 1.3;
+    line-height: 1.5;
 
     color: #542844;
 }
 
+.message span {
 
-/* =========================
-   BUTTON AREA
-========================= */
+    display: block;
+
+    margin:
+        7px 0;
+}
+
+.highlight {
+
+    color: #d92c76;
+}
+
+
+/* BUTTON AREA */
 
 .button-area {
 
     width: 100%;
 
-    height: 150px;
+    height: 145px;
 
     position: relative;
 }
 
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTON */
 
 button {
 
@@ -272,7 +258,7 @@ button {
     border-radius: 999px;
 
     padding:
-        15px 32px;
+        15px 30px;
 
     font-size: 18px;
 
@@ -296,7 +282,7 @@ button {
 
     left: 17%;
 
-    top: 35px;
+    top: 30px;
 
     background:
         linear-gradient(
@@ -344,9 +330,7 @@ button {
 }
 
 
-/* =========================
-   MESSAGE
-========================= */
+/* MESSAGE BELOW BUTTON */
 
 #tease-message {
 
@@ -362,13 +346,11 @@ button {
 }
 
 
-/* =========================
-   SMALL NOTE
-========================= */
+/* NOTE */
 
 .note {
 
-    margin-top: 15px;
+    margin-top: 12px;
 
     font-size: 12px;
 
@@ -378,9 +360,7 @@ button {
 }
 
 
-/* =========================
-   SUCCESS SCREEN
-========================= */
+/* SUCCESS */
 
 #success-screen {
 
@@ -427,6 +407,7 @@ button {
         infinite;
 }
 
+
 .success-title {
 
     margin:
@@ -438,9 +419,10 @@ button {
     color: #d92c76;
 }
 
+
 .success-text {
 
-    max-width: 440px;
+    max-width: 470px;
 
     margin:
         10px auto 20px;
@@ -452,6 +434,7 @@ button {
     color: #604255;
 }
 
+
 .signature {
 
     font-size: 17px;
@@ -462,9 +445,7 @@ button {
 }
 
 
-/* =========================
-   FLOATING HEARTS
-========================= */
+/* FLOATING HEARTS */
 
 .floating-heart {
 
@@ -496,7 +477,6 @@ button {
     }
 
     15% {
-
         opacity: 0.75;
     }
 
@@ -511,9 +491,7 @@ button {
 }
 
 
-/* =========================
-   CONFETTI
-========================= */
+/* CONFETTI */
 
 .confetti {
 
@@ -549,36 +527,36 @@ button {
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width: 600px) {
 
     .card {
 
         padding:
-            35px 20px;
+            30px 18px;
     }
 
     h1 {
 
-        font-size: 34px;
+        font-size: 33px;
     }
 
     .subtitle {
 
-        font-size: 16px;
+        font-size: 15px;
     }
 
-    .question {
+    .message {
 
-        font-size: 24px;
+        font-size: 20px;
+
+        line-height: 1.45;
     }
 
     #yes-button {
 
-        left: 10%;
+        left: 9%;
 
         padding:
             14px 25px;
@@ -610,11 +588,10 @@ button {
 <div class="card">
 
 
-<!-- =========================
-     QUESTION SCREEN
-========================= -->
+<!-- QUESTION SCREEN -->
 
 <div id="question-screen">
+
 
     <div class="top-heart">
         💗
@@ -622,7 +599,9 @@ button {
 
 
     <h1>
+
         Hey, Beautiful! 💕
+
     </h1>
 
 
@@ -633,19 +612,42 @@ button {
 
         <br>
 
-        Because you deserve
-        a little happiness today. 🥰
+        Because I want you
+        to smile today. 🥰
 
     </div>
 
 
-    <div class="question">
+    <!-- YOUR MESSAGE -->
 
-        Will you stay my favorite
-        person? 💕
+    <div class="message">
+
+        <span>
+            You are my best friend. 💕
+        </span>
+
+        <span>
+            I want you to be happy. 😊
+        </span>
+
+        <span>
+            I will always be with you. 🤍
+        </span>
+
+        <span>
+            God will bless you
+            in everything. 🙏✨
+        </span>
+
+        <span class="highlight">
+            And you will be a
+            beautiful engineer ever! 👩‍💻💗
+        </span>
 
     </div>
 
+
+    <!-- BUTTONS -->
 
     <div class="button-area">
 
@@ -673,12 +675,11 @@ button {
 
     </div>
 
+
 </div>
 
 
-<!-- =========================
-     SUCCESS SCREEN
-========================= -->
+<!-- SUCCESS SCREEN -->
 
 <div id="success-screen">
 
@@ -703,8 +704,22 @@ button {
 
         <br><br>
 
-        You just made my day
-        a whole lot brighter. ✨
+        You are my best friend,
+        and I will always be with you. 🤍
+
+        <br><br>
+
+        I want you to always be happy.
+
+        <br>
+
+        May God bless you in everything
+        and guide you toward your dreams. 🙏✨
+
+        <br><br>
+
+        And I know you will become
+        a beautiful and amazing engineer! 👩‍💻💗
 
     </div>
 
@@ -736,10 +751,6 @@ button {
 <script>
 
 
-/* =========================
-   ELEMENTS
-========================= */
-
 const noButton =
     document.getElementById(
         "no-button"
@@ -765,10 +776,6 @@ const successScreen =
         "success-screen"
     );
 
-
-/* =========================
-   VARIABLES
-========================= */
 
 let attempts = 0;
 
@@ -798,13 +805,12 @@ const messages = [
 ];
 
 
-/* =========================
-   MOVE NO BUTTON
-========================= */
+/* MOVE NO */
 
 function moveNoButton() {
 
     attempts++;
+
 
     const buttonWidth =
         noButton.offsetWidth;
@@ -875,13 +881,10 @@ function moveNoButton() {
 
     yesButton.style.transform =
         "scale(" + scale + ")";
-
 }
 
 
-/* =========================
-   DESKTOP
-========================= */
+/* DESKTOP */
 
 noButton.addEventListener(
     "mouseenter",
@@ -893,9 +896,7 @@ noButton.addEventListener(
 );
 
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 noButton.addEventListener(
     "touchstart",
@@ -912,9 +913,7 @@ noButton.addEventListener(
 );
 
 
-/* =========================
-   CLICK
-========================= */
+/* CLICK */
 
 noButton.addEventListener(
     "click",
@@ -928,28 +927,21 @@ noButton.addEventListener(
 );
 
 
-/* =========================
-   YES BUTTON
-========================= */
+/* YES */
 
 yesButton.addEventListener(
     "click",
     function() {
 
-
         questionScreen.style.display =
             "none";
 
-
         noButton.remove();
-
 
         successScreen.style.display =
             "block";
 
-
         createConfetti();
-
 
         createExtraHearts();
 
@@ -957,9 +949,7 @@ yesButton.addEventListener(
 );
 
 
-/* =========================
-   CONFETTI
-========================= */
+/* CONFETTI */
 
 function createConfetti() {
 
@@ -982,7 +972,6 @@ function createConfetti() {
         i < 100;
         i++
     ) {
-
 
         const confetti =
             document.createElement(
@@ -1065,9 +1054,7 @@ function createConfetti() {
 }
 
 
-/* =========================
-   FLOATING HEARTS
-========================= */
+/* FLOATING HEARTS */
 
 function createFloatingHeart() {
 
@@ -1157,9 +1144,7 @@ setInterval(
 );
 
 
-/* =========================
-   EXTRA HEARTS
-========================= */
+/* EXTRA HEARTS */
 
 function createExtraHearts() {
 
@@ -1189,6 +1174,6 @@ function createExtraHearts() {
 
 components.html(
     html,
-    height=750,
+    height=850,
     scrolling=False
 )
